@@ -32,13 +32,13 @@ sub_update () {
   brew upgrade
   npm install npm -g
   npm update -g
-  gem update --system
-  gem update
+  #gem update --system
+  #gem update
 }
 
 sub_clean () {
   brew cleanup
-  gem cleanup
+  #gem cleanup
   . "$NVM_DIR/nvm.sh"; nvm cache clear
 }
 
