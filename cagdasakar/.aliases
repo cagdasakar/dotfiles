@@ -167,3 +167,7 @@ alias totalfolderusage="du -sh"
 
 # MySQL
 alias mysql="mysqlsh --sql"
+
+# Docker
+alias docker-mongo="docker run -d --rm -p 27017:27017 mongo"
+alias docker-redis="docker run -d --rm -p 6379:6379 redis"

@@ -40,5 +40,18 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 # some fix i dont know :/
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/opt/libffi/lib/pkgconfig"
 
+# Ruby
+export RVM_HOME="$HOME/.rvm"
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
+
+# Rust & Cargo
+export RUSTUP_HOME="$HOME/.rustup"
+export CARGO_HOME="$HOME/.cargo"
+
+# Android SDK
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
+# GVM
+export GVM_ROOT=$HOME/.gvm

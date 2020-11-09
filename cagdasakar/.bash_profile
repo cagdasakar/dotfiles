@@ -5,7 +5,7 @@ export PATH="$HOME/bin:$PATH";
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 #for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
-for file in ~/.{path,exports,functions,aliases}; do
+for file in ~/.{exports,path,functions,aliases}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -46,19 +46,19 @@ fi;
 # # OUR VERSION
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+[[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
 
-[[ -s "/Users/cagdasakar/.gvm/scripts/gvm" ]] && source "/Users/cagdasakar/.gvm/scripts/gvm"
+# Go version manager
+[[ -s "$GVM_ROOT/scripts/gvm-default" ]] && source "$GVM_ROOT/scripts/gvm-default"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# load bash completion
+# Load bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # AWS CLI & completer
-# export PATH="/usr/local/aws-cli:$PATH"
 # aws & completer is already available in $PATH -> /usr/local/bin
 complete -C 'aws_completer' aws
 
-complete -C /usr/local/bin/bitcomplete bit
+# complete -C /usr/local/bin/bitcomplete bit
