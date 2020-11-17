@@ -11,8 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
 #ZSH_THEME="bureau"
-ZSH_THEME="custom-bureau"
 #ZSH_THEME="spaceship"
+ZSH_THEME="custom-bureau"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -87,8 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # bind 'up' and 'down' keys to search throughout history
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
-
-autoload bashcompinit && bashcompinit
 
 # User configuration
 [[ -r ~/.bashrc ]] && . ~/.bashrc

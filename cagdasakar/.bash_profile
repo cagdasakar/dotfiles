@@ -1,14 +1,37 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Resolve DOTFILES_DIR (assuming ~/.dotfiles on distros without readlink and/or $BASH_SOURCE/$0)
+READLINK=$(which greadlink 2>/dev/null || which readlink)
+CURRENT_SCRIPT=$BASH_SOURCE
+
+if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
+  SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
+  DOTFILES_DIR=$(dirname "$(dirname "$SCRIPT_PATH")")
+elif [ -d "$HOME/.dotfiles" ]; then
+  DOTFILES_DIR="$HOME/.dotfiles"
+else
+  echo "Unable to find dotfiles, exiting."
+  return
+fi
+
+# Make utilities available
+PATH="$DOTFILES_DIR/bin:$PATH"
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-#for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
-for file in ~/.{exports,path,functions,aliases}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+# Source the dotfiles (order matters)
+for DOTFILE in "$DOTFILES_DIR"/cagdasakar/system/.{exports,path,functions,aliases}; do
+  #[ -f "$DOTFILE" ] && . "$DOTFILE"
+  [ -r "$DOTFILE" ] && [ -f "$DOTFILE" ] && source "$DOTFILE";
+done
+
+# Clean up
+unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
+
+# Export
+export DOTFILES_DIR DOTFILES_EXTRA_DIR
 
 # Case-insensitive globbing (used in pathname expansion)
 # shopt -s nocaseglob;
@@ -43,7 +66,7 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# # OUR VERSION
+# # OUR VERSION # #
 
 # Load RVM into a shell session *as a function*
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
