@@ -4,8 +4,10 @@ gtop
 nodemon
 npm
 npm-check
+npm-check-updates
 prettier
 release-it
+serve
 spot
 superstatic
 svgo
