@@ -5,6 +5,7 @@ PATH := $(DOTFILES_DIR)/bin:$(PATH)
 NVM_DIR := $(HOME)/.nvm
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
+export ACCEPT_EULA=Y
 
 .PHONY: test
 

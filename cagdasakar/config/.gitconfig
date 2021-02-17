@@ -10,6 +10,7 @@
 	safecrlf = warn
 	eol = lf
 	filemode = false
+    ignorecase = false
 
     # Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
