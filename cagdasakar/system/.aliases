@@ -22,7 +22,7 @@ alias gs="git st"
 alias gh="g hist"
 alias ga="git add -A"
 alias gc=commitWithMessage
-alias gp="git push -u origin master"
+alias gp="git push"
 # git commit & push
 alias gop="git acp '$i'"
 # git commit only
