@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
 #ZSH_THEME="bureau"
-#ZSH_THEME="custom-bureau"
+#ZSH_THEME="bureau-cagdas-version"
 ZSH_THEME="spaceship"
 
 # spaceship custom variables
@@ -93,8 +93,6 @@ source $ZSH/oh-my-zsh.sh
 # bind 'up' and 'down' keys to search throughout history
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
-
-autoload bashcompinit && bashcompinit
 
 # User configuration
 [[ -r ~/.bashrc ]] && . ~/.bashrc
