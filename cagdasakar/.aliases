@@ -166,8 +166,11 @@ alias folderusage="du -ch"
 alias totalfolderusage="du -sh"
 
 # MySQL
-alias mysql="mysqlsh --sql"
+# alias mysql="mysqlsh --sql"
 
 # Docker
-alias docker-mongo="docker run -d --rm -p 27017:27017 mongo"
-alias docker-redis="docker run -d --rm -p 6379:6379 redis"
+# alias run-mongo="docker run -d --rm -p 27017:27017 mongo"
+alias run-redis="docker run -d --rm -p 6379:6379 redis"
+
+# Mongo
+alias run-mongo="run-rs --dbpath ~/.mongo-data/replica-set-data --keep &"

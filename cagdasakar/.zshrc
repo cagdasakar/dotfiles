@@ -11,8 +11,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
 #ZSH_THEME="bureau"
-ZSH_THEME="custom-bureau"
-#ZSH_THEME="spaceship"
+#ZSH_THEME="custom-bureau"
+ZSH_THEME="spaceship"
+
+# spaceship custom variables
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_EXIT_CODE_SHOW="true"
+#SPACESHIP_USER_SHOW="always"
+SPACESHIP_BATTERY_SHOW="true"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -120,9 +126,6 @@ autoload bashcompinit && bashcompinit
 # Example aliases
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
 
 # Starship integration (cross-shell prompt for astronauts)
 # eval "$(starship init zsh)"
