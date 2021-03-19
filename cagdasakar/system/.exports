@@ -50,6 +50,9 @@ export NVM_DIR="$HOME/.nvm"
 export RUSTUP_HOME="$HOME/.rustup"
 export CARGO_HOME="$HOME/.cargo"
 
+# JAVA SDK
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-16.jdk/Contents/Home/bin
+
 # Android SDK
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
