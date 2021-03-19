@@ -11,7 +11,7 @@ export ACCEPT_EULA=Y
 
 all: $(OS)
 
-macos: sudo core-macos packages #link
+macos: sudo core-macos #packages #link
 
 linux: core-linux link
 
@@ -50,7 +50,7 @@ unlink: stow-$(OS)
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
 brew:
-	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 bash: BASH=/usr/local/bin/bash
 bash: SHELLS=/private/etc/shells
@@ -93,6 +93,10 @@ node-packages: npm
 
 zsh-package: brew
 	curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+
+zsh-plugins: zsh-package 
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 test:
 	. $(NVM_DIR)/nvm.sh; bats test

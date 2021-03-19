@@ -170,6 +170,9 @@ alias diskusage="df -h"
 alias folderusage="du -ch"
 alias totalfolderusage="du -sh"
 
+# Open dotfiles in VS Code
+alias dotfiles="code ~/.dotfiles"
+
 # MySQL
 # alias mysql="mysqlsh --sql"
 
@@ -179,4 +182,4 @@ alias run-jaeger="docker run -d -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp 
 
 # Mongo
 # alias run-mongo="docker run -d --rm -p 27017:27017 mongo"
-alias run-mongo="run-rs --dbpath ~/.mongo-data/replica-set-data --keep &"
+alias run-mongo="run-rs -v 4.4.0 --dbpath ~/.mongo-data/replica-set-data --keep &"

@@ -1,5 +1,8 @@
+# Homebrew fix for M1 mac
+export PATH="/opt/homebrew/bin:$PATH";
+
 # Rust
-export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="$PATH:$CARGO_HOME/bin"
 
 # Android SDK
 export PATH=$PATH:$ANDROID_HOME/emulator

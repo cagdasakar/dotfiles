@@ -16,10 +16,7 @@ else
 fi
 
 # Make utilities available
-PATH="$DOTFILES_DIR/bin:$PATH"
-
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source the dotfiles (order matters)
 for DOTFILE in "$DOTFILES_DIR"/cagdasakar/system/.{exports,path,functions,aliases}; do
@@ -66,7 +63,9 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# # OUR VERSION # #
+################
+### MY STUFF ###
+################
 
 # Load RVM into a shell session *as a function*
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 

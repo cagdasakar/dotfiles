@@ -9,22 +9,20 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-# ZSH_THEME="avit"
-#ZSH_THEME="bureau"
-#ZSH_THEME="bureau-cagdas-version"
+# ZSH_THEME="bureau-cagdas-version"
 ZSH_THEME="spaceship"
-
-# spaceship custom variables
-SPACESHIP_TIME_SHOW="true"
-SPACESHIP_EXIT_CODE_SHOW="true"
-#SPACESHIP_USER_SHOW="always"
-SPACESHIP_BATTERY_SHOW="true"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Spaceship customization part
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_EXIT_CODE_SHOW="true"
+# SPACESHIP_USER_SHOW="always"
+SPACESHIP_BATTERY_SHOW="true"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -84,6 +82,7 @@ plugins=(
    vscode
    zsh-autosuggestions
    zsh-syntax-highlighting
+   # zsh-completions
    # this should be loaded after syntax highlighting
    history-substring-search
 )
@@ -99,9 +98,6 @@ bindkey "^[[B" history-substring-search-down
 #if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -129,4 +125,5 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 # eval "$(starship init zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
+# autoload -U compinit && compinit
 # complete -o nospace -C /usr/local/bin/bitcomplete bit
