@@ -13,3 +13,12 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# IDE specific
+.idea
+.vscode
+
+# JS world
+node_modules
+bower_components
+npm-debug.log

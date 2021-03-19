@@ -13,7 +13,7 @@
     ignorecase = false
 
     # Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	# attributesfile = ~/.gitattributes
 
     # Make `git rebase` safer on macOS
