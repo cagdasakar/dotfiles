@@ -384,6 +384,9 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # Allow the App Store to reboot machine on macOS updates
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
+# Allow all apps to substitute keyboard replacements
+defaults write -g WebAutomaticTextReplacementEnabled -bool true
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################

@@ -17,10 +17,13 @@ dsznajder.es7-react-js-snippets
 robbowen.synthwave-vscode
 pkief.material-icon-theme
 dracula-theme.theme-dracula
+liviuschera.noctis
 byi8220.indented-block-highlighting
 lehni.vscode-fix-checksums
 quicktype.quicktype
 ms-vsliveshare.vsliveshare
+lostintangent.vsls-pomodoro
+ritwickdey.liveserver
 aaron-bond.better-comments
 jasonnutter.search-node-modules
 ChakrounAnas.turbo-console-log
@@ -29,3 +32,4 @@ formulahendry.auto-rename-tag
 formulahendry.auto-complete-tag
 formulahendry.auto-close-tag
 naumovs.color-highlight
+eg2.vscode-npm-script
