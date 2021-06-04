@@ -79,20 +79,24 @@ SPACESHIP_BATTERY_SHOW="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-   git 
-   npm 
-   yarn
-   nvm 
-   osx 
-   docker
-   safe-paste 
-   sublime 
-   vscode
-   zsh-autosuggestions
-   zsh-syntax-highlighting
-   # zsh-completions
-   # this should be loaded after syntax highlighting
-   history-substring-search
+  alias-finder
+  copydir
+  copyfile
+  git 
+  npm 
+  yarn
+  nvm 
+  osx 
+  docker
+  docker-compose
+  safe-paste 
+  sublime 
+  vscode
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  # zsh-completions
+  # this should be loaded after syntax highlighting
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
