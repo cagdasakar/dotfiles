@@ -8,7 +8,7 @@ sub_help () {
   echo "Usage: $BIN_NAME <command>"
   echo
   echo "Commands:"
-  echo "   clean            Clean up caches (brew, nvm, gem)"
+  echo "   clean            Clean up caches (brew, gem)"
   echo "   dock             Apply macOS Dock settings"
   echo "   edit             Open dotfiles in IDE ($DOTFILES_IDE) and Git GUI ($DOTFILES_GIT_GUI)"
   echo "   help             This help message"
@@ -33,14 +33,13 @@ sub_update () {
   brew cleanup
   npm install npm -g
   npm update -g
-  #gem update --system
-  #gem update
+  # gem update --system
+  # gem update
 }
 
 sub_clean () {
   brew cleanup
-  #gem cleanup
-  . "$NVM_DIR/nvm.sh"; nvm cache clear
+  # gem cleanup
 }
 
 sub_macos () {
