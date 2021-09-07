@@ -71,10 +71,11 @@ fi;
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
 
 # Go version manager
-[[ -s "$GVM_ROOT/scripts/gvm-default" ]] && source "$GVM_ROOT/scripts/gvm-default"
+[[ -s "$GVM_ROOT/scripts/gvm" ]] && source "$GVM_ROOT/scripts/gvm"
 
+# Node version manager
 if [ -f "$NVM_DIR/nvm.sh" ]; then
-  source "$NVM_DIR/nvm.sh" --no-use
+  source "$NVM_DIR/nvm.sh" # --no-use
 
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi

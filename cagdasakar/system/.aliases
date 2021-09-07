@@ -19,7 +19,7 @@ alias p="cd ~/Projects"
 # Version Control
 alias g="git"
 alias gs="git st"
-alias gh="g hist"
+# alias gh="g hist"
 alias ga="git add -A"
 alias gc=commitWithMessage
 alias gp="git push"
