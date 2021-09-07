@@ -67,6 +67,12 @@ fi;
 ### MY STUFF ###
 ################
 
+# Node version manager
+eval "$(fnm env)"
+
+# Rust & Cargo
+. "$HOME/.cargo/env"
+
 # Load RVM into a shell session *as a function*
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
 

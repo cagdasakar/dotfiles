@@ -72,14 +72,14 @@ endif
 git: brew
 	brew install git git-extras
 
-npm:
-	
+brew-packages: brew
+	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
+
+npm: brew-packages
+	fnm install --lts
 
 ruby: brew
 	brew install ruby
-
-brew-packages: brew
-	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
 
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
@@ -88,7 +88,8 @@ cask-apps: brew
 	xattr -d -r com.apple.quarantine ~/Library/QuickLook
 
 node-packages: npm
-	npm install -g $(shell cat install/npmfile)
+# expose npm
+	eval $$(fnm env); npm install -g $(shell cat install/npmfile)
 
 zsh-package: brew
 	curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
@@ -98,4 +99,5 @@ zsh-plugins: zsh-package
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 test:
-	bats test
+# expose npm
+	eval $$(fnm env); bats test
