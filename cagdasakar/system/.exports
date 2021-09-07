@@ -43,9 +43,6 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/opt/libffi/lib/pkgconfig"
 # Ruby
 export RVM_HOME="$HOME/.rvm"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-
 # Rust & Cargo
 export RUSTUP_HOME="$HOME/.rustup"
 export CARGO_HOME="$HOME/.cargo"
