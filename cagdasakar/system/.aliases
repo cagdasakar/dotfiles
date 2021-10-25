@@ -177,9 +177,10 @@ alias dotfiles="code ~/.dotfiles"
 # alias mysql="mysqlsh --sql"
 
 # Docker
-alias run-redis="docker run -d --rm -p 6379:6379 redis"
-alias run-jaeger="docker run -d -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p5778:5778 -p16686:16686 -p14268:14268 jaegertracing/all-in-one"
+alias run-redis="docker container run -d --rm -p 6379:6379 redis"
+alias run-jaeger="docker container run -d --rm -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p5778:5778 -p16686:16686 -p14268:14268 jaegertracing/all-in-one"
+alias run-rabbitmq="docker container run -d --rm --hostname my-rabbit --env RABBITMQ_DEFAULT_USER=cagdas-mq --env RABBITMQ_DEFAULT_PASS=mypassword -p 15672:15672 -p 5672:5672 rabbitmq:3-management"
 
 # Mongo
 # alias run-mongo="docker run -d --rm -p 27017:27017 mongo"
-alias run-mongo="run-rs -v 4.4.0 --dbpath ~/.mongo-data/replica-set-data --keep &"
+alias run-mongo="run-rs -v 4.4.0 --keep --dbpath ~/.mongo-data/replica-set-data &"
