@@ -80,7 +80,7 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -177,10 +177,21 @@ alias dotfiles="code ~/.dotfiles"
 # alias mysql="mysqlsh --sql"
 
 # Docker
-alias run-redis="docker container run -d --rm -p 6379:6379 redis"
-alias run-jaeger="docker container run -d --rm -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p5778:5778 -p16686:16686 -p14268:14268 jaegertracing/all-in-one"
-alias run-rabbitmq="docker container run -d --rm --hostname my-rabbit --env RABBITMQ_DEFAULT_USER=cagdas-mq --env RABBITMQ_DEFAULT_PASS=mypassword -p 15672:15672 -p 5672:5672 rabbitmq:3-management"
+alias run-redis="docker container run -d --rm \
+					-p 6379:6379 redis"
+alias run-jaeger="docker container run -d --rm \
+					-p5775:5775/udp -p6831:6831/udp \
+					-p6832:6832/udp -p5778:5778 \
+					-p16686:16686 -p14268:14268 \
+					jaegertracing/all-in-one"
+alias run-rabbitmq="docker container run -d --rm \
+					--hostname my-rabbit \
+					--env RABBITMQ_DEFAULT_USER=cagdas-mq \
+					--env RABBITMQ_DEFAULT_PASS=mypassword \
+					-p 15672:15672 -p 5672:5672 \
+					rabbitmq:3-management"
 
 # Mongo
 # alias run-mongo="docker run -d --rm -p 27017:27017 mongo"
-alias run-mongo="run-rs -v 4.4.0 --keep --dbpath ~/.mongo-data/replica-set-data &"
+alias run-mongo="run-rs -v 4.4.0 --keep \
+				--dbpath ~/.mongo-data/replica-set-data &"
