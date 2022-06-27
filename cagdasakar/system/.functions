@@ -165,9 +165,9 @@ function o() {
 
 # COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 # node    20978 cagdasakar   24u  IPv4 0x8404288c504c889f      0t0  TCP *:hbci (LISTEN)
-funcion port-used-by() {
-	lsof -i tcp:"$1"
-}
+#funcion port-used-by() {
+#	lsof -i tcp:"$1"
+#}
 function kill-process-by-port() {
     # get second argument list and feed into kill -9 command
 	# ignore first one, since it is table header (aka PID column header)	

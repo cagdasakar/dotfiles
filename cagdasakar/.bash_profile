@@ -74,7 +74,7 @@ eval "$(fnm env)"
 . "$HOME/.cargo/env"
 
 # Load RVM into a shell session *as a function*
-[[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
+[[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
 
 # Go version manager
 [[ -s "$GVM_ROOT/scripts/gvm" ]] && source "$GVM_ROOT/scripts/gvm"

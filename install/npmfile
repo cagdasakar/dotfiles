@@ -9,6 +9,7 @@ npm-check
 npm-check-updates
 prettier
 release-it
+run-rs
 serve
 svgo
 tldr

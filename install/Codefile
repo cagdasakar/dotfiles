@@ -1,4 +1,3 @@
-CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode
 eamodio.gitlens
@@ -12,7 +11,6 @@ redhat.vscode-yaml
 sharat.vscode-brewfile
 visualstudioexptteam.vscodeintellicode
 christian-kohler.npm-intellisense
-xabikos.javascriptsnippets
 dsznajder.es7-react-js-snippets
 robbowen.synthwave-vscode
 pkief.material-icon-theme
@@ -32,6 +30,10 @@ formulahendry.auto-rename-tag
 formulahendry.auto-complete-tag
 formulahendry.auto-close-tag
 naumovs.color-highlight
-eg2.vscode-npm-script
 pranaygp.vscode-css-peek
 rangav.vscode-thunder-client
+qezhu.gitlink
+jeffersonlicet.snipped
+jomeinaster.bracket-peek
+jerrygoyal.shortcut-menu-bar
+pflannery.vscode-versionlens

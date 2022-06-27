@@ -80,17 +80,17 @@ SPACESHIP_BATTERY_SHOW="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   alias-finder
-  copydir
+  copypath
   copyfile
-  git 
-  npm 
+  git
+  npm
   yarn
-  nvm 
-  osx 
+  nvm
+  macos
   docker
   docker-compose
-  safe-paste 
-  sublime 
+  safe-paste
+  sublime
   vscode
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -107,7 +107,7 @@ bindkey "^[[B" history-substring-search-down
 
 # User configuration
 [[ -r ~/.bashrc ]] && . ~/.bashrc
-#if [ -f ~/.bashrc ]; then . ~/.bashrc; fi 
+#if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -142,3 +142,12 @@ autoload -U +X bashcompinit && bashcompinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Zsh does not perform console I/O after the instant prompt preamble. See the link below for details.
+# Zsh will start quickly and prompt will update smoothly.
+POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
+# Atuin search, Magical shell history
+# eval "$(atuin init zsh)"
