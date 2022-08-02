@@ -25,10 +25,10 @@ for DOTFILE in "$DOTFILES_DIR"/cagdasakar/system/.{exports,path,functions,aliase
 done
 
 # Clean up
-unset CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
+unset CURRENT_SCRIPT SCRIPT_PATH DOTFILE
 
 # Export
-export DOTFILES_DIR DOTFILES_EXTRA_DIR
+export DOTFILES_DIR
 
 # Case-insensitive globbing (used in pathname expansion)
 # shopt -s nocaseglob;

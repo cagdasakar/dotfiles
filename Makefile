@@ -1,8 +1,8 @@
 SHELL = /bin/bash
-DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell bin/is-supported bin/is-macos macos linux)
-PATH := $(DOTFILES_DIR)/bin:$(PATH)
+DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local)
+PATH := $(HOMEBREW_PREFIX)/bin:$(DOTFILES_DIR)/bin:$(PATH)
 
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
@@ -53,20 +53,21 @@ unlink: stow-$(OS)
 brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-bash: BASH=$(HOMEBREW_PREFIX)/bin/bash
+bash: BASH_BIN=$(HOMEBREW_PREFIX)/bin/bash
+bash: BREW_BIN=$(HOMEBREW_PREFIX)/bin/brew
 bash: SHELLS=/private/etc/shells
 bash: brew
 ifdef GITHUB_ACTION
-	if ! grep -q $(BASH) $(SHELLS); then \
-		brew install bash bash-completion@2 pcre && \
-		sudo append $(BASH) $(SHELLS) && \
-		sudo chsh -s $(BASH); \
+	if ! grep -q $(BASH_BIN) $(SHELLS); then \
+		$(BREW_BIN) install bash bash-completion@2 pcre && \
+		sudo append $(BASH_BIN) $(SHELLS) && \
+		sudo chsh -s $(BASH_BIN); \
 	fi
 else
-	if ! grep -q $(BASH) $(SHELLS); then \
-		brew install bash bash-completion@2 pcre && \
-		sudo append $(BASH) $(SHELLS) && \
-		chsh -s $(BASH); \
+	if ! grep -q $(BASH_BIN) $(SHELLS); then \
+		$(BREW_BIN) install bash bash-completion@2 pcre && \
+		sudo append $(BASH_BIN) $(SHELLS) && \
+		chsh -s $(BASH_BIN); \
 	fi
 endif
 
@@ -95,7 +96,7 @@ node-packages: npm
 zsh-package: brew
 	curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 
-zsh-plugins: zsh-package 
+zsh-plugins: zsh-package
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
