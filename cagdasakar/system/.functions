@@ -1,4 +1,42 @@
-#!/usr/bin/env bash
+
+# Add to path
+
+prepend-path() {
+  [ -d $1 ] && PATH="$1:$PATH"
+}
+
+append-path() {
+  [ -d $1 ] && PATH="$PATH:$1"
+}
+
+# Show 256 TERM colors
+
+colors() {
+  local X=$(tput op)
+  local Y=$(printf %$((COLUMNS-6))s)
+  for i in {0..256}; do
+  o=00$i;
+  echo -e ${o:${#o}-3:3} $(tput setaf $i;tput setab $i)${Y// /=}$X;
+  done
+}
+
+# Calculator
+
+calc() {
+  echo "$*" | bc -l;
+}
+
+# Weather
+
+meteo() {
+  local LOCALE=$(echo ${LANG:-en} | cut -c1-2)
+  if [ $# -eq 0 ]; then
+    local LOCATION=$(curl -s ipinfo.io/loc)
+  else
+    local LOCATION=$1
+  fi
+  curl -s "$LOCALE.wttr.in/$LOCATION"
+}
 
 # Create a new directory and enter it
 function mkd() {
@@ -170,7 +208,7 @@ function o() {
 #}
 function kill-process-by-port() {
     # get second argument list and feed into kill -9 command
-	# ignore first one, since it is table header (aka PID column header)	
+	# ignore first one, since it is table header (aka PID column header)
 	lsof -i tcp:"$1" | awk '{if ("PID" != $2) print $2}' | xargs kill -9
 }
 
@@ -195,10 +233,10 @@ function commitWithMessage() {
 
 # change resolution to 720p
 # ffmpeg -i input.avi -vf scale=320:240 output.avi
-function to-mp4() { 
+function to-mp4() {
     filename=$(echo "$1" | cut -f 1 -d '.')
 
-    ffmpeg -i "$1" -vcodec libx264 -acodec aac "$filename-converted.mp4" 
+    ffmpeg -i "$1" -vcodec libx264 -acodec aac "$filename-converted.mp4"
 }
 
 function all-to-mp4() {
@@ -206,8 +244,8 @@ function all-to-mp4() {
 	for eachfile in $filenames
 	do
 		echo $eachfile
-   		to-mp4 $eachfile 
-   		wait 
+   		to-mp4 $eachfile
+   		wait
    		echo "Finished"
 		#BACK_PID=$!
 		#echo "Waiting process to finish with ID $BACK_PID.."

@@ -19,7 +19,7 @@ fi
 export PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source the dotfiles (order matters)
-for DOTFILE in "$DOTFILES_DIR"/cagdasakar/system/.{exports,path,functions,aliases}; do
+for DOTFILE in "$DOTFILES_DIR"/cagdasakar/system/.{exports,functions,path,aliases}; do
   #[ -f "$DOTFILE" ] && . "$DOTFILE"
   [ -r "$DOTFILE" ] && [ -f "$DOTFILE" ] && source "$DOTFILE";
 done
