@@ -151,3 +151,11 @@ export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 # Atuin search, Magical shell history
 # eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/Users/cagdasakar/.bun/_bun" ] && source "/Users/cagdasakar/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/cagdasakar/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
