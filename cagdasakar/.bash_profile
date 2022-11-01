@@ -1,3 +1,5 @@
+echo "Loading .bashrc.."
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -68,7 +70,7 @@ fi;
 ################
 
 # Node version manager
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd)"
 
 # Rust & Cargo
 . "$HOME/.cargo/env"
