@@ -12,7 +12,7 @@ export ACCEPT_EULA=Y
 
 all: $(OS)
 
-macos: sudo core-macos #packages #link
+macos: sudo core-macos packages #link
 
 linux: core-linux link
 
