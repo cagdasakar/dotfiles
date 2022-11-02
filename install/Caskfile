@@ -5,7 +5,6 @@ tap "homebrew/cask-versions"
 
 cask "1password"
 # cask "alfred"
-cask "apparency"
 cask "betterzip"
 cask "boop"
 # cask "brave-browser"
