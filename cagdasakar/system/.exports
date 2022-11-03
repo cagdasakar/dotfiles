@@ -55,3 +55,10 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # GVM
 export GVM_ROOT=$HOME/.gvm
+
+# PNPM
+export PNPM_HOME=$HOME/Library/pnpm
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+

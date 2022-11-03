@@ -1,7 +1,7 @@
 # Start with system path
 # Retrieve it from getconf, otherwise it's just current $PATH
 
-is-executable getconf && PATH=$($(command -v getconf) PATH)
+$DOTFILES_DIR/bin/is-executable getconf && PATH=$($(command -v getconf) PATH)
 
 export HOMEBREW_PREFIX=$($DOTFILES_DIR/bin/is-supported $DOTFILES_DIR/bin/is-arm64 /opt/homebrew /usr/local)
 
@@ -16,6 +16,7 @@ prepend-path "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin"
 prepend-path "$HOMEBREW_PREFIX/opt/grep/libexec/gnubin"
 prepend-path "$HOMEBREW_PREFIX/opt/python/libexec/bin"
 prepend-path "$HOMEBREW_PREFIX/opt/ruby/bin"
+prepend-path "$HOMEBREW_PREFIX/opt/openssl@3/bin"
 prepend-path "$DOTFILES_DIR/bin"
 prepend-path "$HOME/bin"
 # Rust
@@ -25,10 +26,16 @@ prepend-path "$CARGO_HOME/bin"
 # prepend-path $ANDROID_HOME/tools
 # prepend-path $ANDROID_HOME/tools/bin
 # prepend-path $ANDROID_HOME/platform-tools
-# Poetry
-prepend-path $HOME/.poetry/bin
+# # Poetry
+# prepend-path $HOME/.poetry/bin
 # # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # prepend-path $RVM_HOME/bin
+# Bun
+prepend-path "$BUN_INSTALL/bin"
+# pnpm
+prepend-path $PNPM_HOME
+# Rancher
+prepend-path "$HOME/.rd/bin"
 prepend-path "/sbin"
 prepend-path "/usr/sbin"
 prepend-path "/usr/local/sbin"

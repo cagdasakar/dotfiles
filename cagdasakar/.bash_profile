@@ -17,9 +17,6 @@ else
   return
 fi
 
-# Make utilities available
-export PATH="$DOTFILES_DIR/bin:$PATH"
-
 # Source the dotfiles (order matters)
 for DOTFILE in "$DOTFILES_DIR"/cagdasakar/system/.{exports,functions,path,aliases}; do
   #[ -f "$DOTFILE" ] && . "$DOTFILE"
@@ -89,3 +86,6 @@ eval "$(fnm env --use-on-cd)"
 complete -C 'aws_completer' aws
 
 # complete -C /usr/local/bin/bitcomplete bit
+
+# Bun completions
+[ -s "/Users/cagdas/.bun/_bun" ] && source "/Users/cagdas/.bun/_bun"

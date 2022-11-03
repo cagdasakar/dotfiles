@@ -1,4 +1,5 @@
 echo "Loading .zshrc.."
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -148,22 +149,5 @@ autoload -U +X bashcompinit && bashcompinit
 # Zsh will start quickly and prompt will update smoothly.
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
-
 # Atuin search, Magical shell history
 # eval "$(atuin init zsh)"
-
-# bun completions
-[ -s "/Users/cagdasakar/.bun/_bun" ] && source "/Users/cagdasakar/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/Users/cagdasakar/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/Users/cagdasakar/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-# Rancher
-export PATH="$PATH:$HOME/.rd/bin"
