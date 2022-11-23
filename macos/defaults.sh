@@ -271,8 +271,8 @@ defaults write com.apple.dock no-bouncing -bool true
 # 3 Application Windows
 # 4 Desktop
 defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tr-corner -int 2
-defaults write com.apple.dock wvous-bl-corner -int 3
+defaults write com.apple.dock wvous-tr-corner -int 3
+defaults write com.apple.dock wvous-bl-corner -int 2
 defaults write com.apple.dock wvous-br-corner -int 4
 
 # Don't show recently used applications in the Dock
