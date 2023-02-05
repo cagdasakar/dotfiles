@@ -1,4 +1,5 @@
-COMPUTER_NAME="Çağdaş's MacBook Pro"
+# COMPUTER_NAME="Çağdaş's MacBook Pro"
+COMPUTER_NAME="Cagdas MacBook Pro"
 COMPUTER_NAME_LOCAL="Cagdas-MBP"
 # LANGUAGES=(en tr)
 LANGUAGES=(en)
